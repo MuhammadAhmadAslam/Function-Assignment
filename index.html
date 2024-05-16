@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+        <button id="b1" onclick="date()">Get Date And Time</button>
+        <h1 id="h1"></h1>
+        <button id="b2" onclick="greet(prompt('Enter Your first Name'),prompt('Enter Your last Name'))">Greet Me</button>
+        <h1 id="h2"></h1>
+        <button id="b3" onclick="calculate(prompt('Enter A First Expression') , prompt('Enter a Opreator') , prompt('Enter a last opreator'))">Calculate</button>
+         <h1 id="h3"></h1>
+        <button id="b4" onclick="squareroot(prompt('Enter a number to square root of a number'))">Take a square root of me</button>
+        <h1 id="h4"></h1>
+        <button id="b5" onclick="factorial(prompt('Enter a number to take a factorial of this number'))">Take A Factorial</button>
+        <h1 id="h5"></h1>
+        <button id="b6" onclick="counting(prompt('Enter a starting point of counting'), prompt('Enter a ending point of counting'))">Make A counting</button>
+        <h1 id="h6"></h1>
+        <button id="b7" onclick="calculating(prompt('Enter a Base') , prompt('Enter a prependicular') , prompt('Enter a side'))">Calculate Hypotenuse</button>
+        <h1 id="h7"></h1>
+        <button id="b8" onclick="cal(prompt('Enter a width') , prompt('Enter a height'))">Calculate Area</button>
+        <h1 id="h8"></h1>
+        <button id="b9" onclick="palindrome(prompt('Enter a word to check a palindrome'))">Check Palindrome</button>
+        <h1 id="h9"></h1>
+   <script>
+            function date(){
+                let now = new Date()
+                document.getElementById('h1').innerText = now
+                console.log(now);
+            }
+
+            function greet(firstName,LastName) {
+               let final = `Welcome ${firstName} ${LastName}`
+               document.getElementById('h2').innerText = final
+            }
+
+            function calculate(firsrEquation,Opreator,LastEquation) {
+             let  evulate =  eval(firsrEquation+Opreator+LastEquation)
+                document.getElementById('h3').innerText = evulate
+            }
+
+
+            function squareroot(num1) {
+                let evulate1 = num1*num1
+                document.getElementById('h4').innerText = evulate1
+            }
+
+            function factorial(n) {
+                    if (n === 0 || n === 1) {
+                        return 1;
+                    }
+                    let result = 1;
+                    for (let i = 2; i <= n; i++) {
+                        result *= i;
+                    }
+                    document.getElementById('h5').innerText = result
+                   
+            }
+
+
+                function counting(starting, ending) {
+                    let countDisplay = '';
+                    for (let i = starting; i <= ending; i++) {
+                        if (i !== starting) {
+                            countDisplay += ' ';
+                        }
+                        countDisplay += i;
+                    }
+                    document.getElementById('h6').innerText = countDisplay;
+                }
+
+
+
+
+            function calculating(base,perpendicular){
+                base = base*base
+                perpendicular = perpendicular*perpendicular
+                let hypotenuse = base + perpendicular
+                
+                document.getElementById('h7').innerText = hypotenuse
+                function calculating(side) {
+                         let sides =  side * side;
+                         document.getElementById('h7').innerText = `this is sides ${sides}` 
+                 }
+            }
+
+
+            function cal(width,height){
+                let a  = width * height
+                document.getElementById('h8').innerText = a
+
+            }
+
+            function palindrome(word) {
+               
+                 word1 = word.split('')
+               clone = word1.slice().reverse()
+               if(word1.join('') == clone.join('')){
+                // word.join('')
+                document.getElementById('h9').innerText = `This word is Palindrome ${word}`
+               }else{
+
+                // word.join('')
+                document.getElementById('h9').innerText = `This word is not Palindrome ${word}`
+               }
+            }
+
+    </script>
+</body>
+</html>
