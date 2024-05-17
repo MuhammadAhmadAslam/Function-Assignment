@@ -34,6 +34,7 @@
         <h1 id="h12"></h1>
         <button id="b13" onclick="calcCircumference(prompt('Enter a radius'))">Calculate the Circumfarance Of A Circle</button>
         <h1 id="h13"></h1>
+       
    <script>
             function date(){
                 let now = new Date()
@@ -153,7 +154,8 @@
 
             function calcCircumference(radius){
                 let circumfarance = 2*3.14159*radius
-                document.getElementById('h13').innerText = 'Circumference of circle ' +  circumfarance
+                let areaOfCircle =  3.14159*radius*radius
+                document.getElementById('h13').innerText = 'Circumference of circle ' +  circumfarance + ' Area Of Circle ' + areaOfCircle
             }
 
 
