@@ -26,6 +26,14 @@
         <h1 id="h8"></h1>
         <button id="b9" onclick="palindrome(prompt('Enter a word to check a palindrome'))">Check Palindrome</button>
         <h1 id="h9"></h1>
+        <button id="b10" onclick="upperLetter(prompt('Enter a word to capatilize each fisrt word'))">Capatilize Every Word</button>
+        <h1 id="h10"></h1>
+        <button id="b11" onclick="longestWord(prompt('Enter a sentence to check the longest word in sentence'))">Enter a Sentence to check longest word</button>
+        <h1 id="h11"></h1>
+        <button id="b12" onclick="lenght(prompt('Enter a word to find a lenght of sentence'))">Find a lenght of a sentence</button>
+        <h1 id="h12"></h1>
+        <button id="b13" onclick="calcCircumference(prompt('Enter a radius'))">Calculate the Circumfarance Of A Circle</button>
+        <h1 id="h13"></h1>
    <script>
             function date(){
                 let now = new Date()
@@ -108,6 +116,46 @@
                 document.getElementById('h9').innerText = `This word is not Palindrome ${word}`
                }
             }
+
+
+            function upperLetter(sentence) {
+                sentence = sentence.split(' ')
+                for (let i = 0; i < sentence.length; i++) {
+                    sentence[i] = sentence[i].charAt(0).toUpperCase() + sentence[i].slice(1).toLowerCase();
+
+                    
+                }
+                sentence = sentence.join(' ')
+               document.getElementById('h10').innerText = sentence
+
+            }
+
+            function longestWord(s){
+                
+                s = s.split(' ')
+                longest = ''
+                for (let i = 0; i < s.length; i++) {
+                    if (longest.length < s[i].length) {
+                        // console.log(s[i]);
+                        longest = s[i]
+
+                    }
+                    
+                }
+                document.getElementById('h11').innerText = longest
+            }
+
+
+              
+            function lenght(aSentence){
+               document.getElementById('h12').innerText = aSentence.length
+            }
+
+            function calcCircumference(radius){
+                let circumfarance = 2*3.14159*radius
+                document.getElementById('h13').innerText = 'Circumference of circle ' +  circumfarance
+            }
+
 
     </script>
 </body>
